@@ -35,33 +35,36 @@ public class Calculator {
          * @return 
          */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	/**
          * This is an add method that should add the parameter to the total variable. 
          */
 	public void add (int value) {
-		
+		total +=  value;
 	}
 		/**
          * This is a method that subtract the parameter from the total variable.
          */
 
 	public void subtract (int value) {
-		
+		total -= value;
 	}
 	/**
          * This is a multiply method the total by the parameter.
          */
 	public void multiply (int value) {
-		
+		total *= value;
 	}
 	/**
          * The divide method is dividing the total by the parameter by using an integer division
          * If the parameter is 0 then set the total to 0.
          */
 	public void divide (int value) {
-		
+            if(value == 0)
+                total = 0;
+            else
+                total /= value;
 	}
 	/**
          * The get history method will use normal operation, which returns the history of all the actions as a string.
