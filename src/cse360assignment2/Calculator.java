@@ -23,12 +23,14 @@ package cse360assignment2;
  */
 public class Calculator {
 
-  private int total;
+    private int total;
+    StringBuilder history;
 	 /**
          * This is a constructor method that initializes the total to 0. 
          */
 	public Calculator () {
 		total = 0;  
+                history = new StringBuilder("0");
 	}
 	/**
          * this is a method that returns the current value of the total.
@@ -41,6 +43,7 @@ public class Calculator {
          * This is an add method that should add the parameter to the total variable. 
          */
 	public void add (int value) {
+                history.append(" + " + value);
 		total +=  value;
 	}
 		/**
@@ -48,12 +51,14 @@ public class Calculator {
          */
 
 	public void subtract (int value) {
+                history.append(" - " + value);
 		total -= value;
 	}
 	/**
          * This is a multiply method the total by the parameter.
          */
 	public void multiply (int value) {
+                history.append(" * " + value);    
 		total *= value;
 	}
 	/**
@@ -61,6 +66,7 @@ public class Calculator {
          * If the parameter is 0 then set the total to 0.
          */
 	public void divide (int value) {
+            history.append(" / " + value);
             if(value == 0)
                 total = 0;
             else
@@ -71,6 +77,6 @@ public class Calculator {
          * @return a String that separates all operations and values with a space.
          */
 	public String getHistory () {
-		return "";
+		return history.toString();
 	}
 }
